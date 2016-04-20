@@ -16,6 +16,9 @@ function getPath(child, parentPath = '') {
 
   const paths = [];
   const childPath = props.path;
+
+  if (!childPath) return [];
+
   const fullPath = [
     parentPath === '/'
       ? null

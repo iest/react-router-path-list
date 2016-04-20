@@ -1,6 +1,6 @@
 import test from 'tape';
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import {Route, IndexRoute, Redirect, IndexRedirect} from 'react-router';
 
 import pathList from '../path-list';
 
@@ -119,6 +119,30 @@ test('Nested behaviour', t => {
       '/gob-says/banner/michael',
     ],
     'works with a mixture of nested routes'
+  );
+  t.end();
+});
+
+test('Other react router route types', t => {
+  t.deepEqual(
+    pathList(
+      <Route path="/" component={Foo}>
+        <IndexRoute component={Foo}/>
+        <Route path="dorothy-mantooth" component={Foo}/>
+        <Route path="is-a" component={Foo}>
+          <IndexRedirect to="saint"/>
+          <Route path="saint" component={Foo}/>
+        </Route>
+        <Redirect from="seafood" to="dinner"/>
+      </Route>
+    ),
+    [
+      '/',
+      '/dorothy-mantooth',
+      '/is-a',
+      '/is-a/saint',
+    ],
+    'works with IndexRoute, Redirect, and IndexRedirect'
   );
   t.end();
 });
