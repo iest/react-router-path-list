@@ -2,7 +2,7 @@ import test from 'tape';
 import React from 'react';
 import {Route, IndexRoute, Redirect, IndexRedirect} from 'react-router';
 
-import pathList from '../path-list';
+import pathList from '../';
 
 const Foo = () => <div/>;
 

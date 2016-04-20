@@ -1,13 +1,3 @@
-import {Route, IndexRoute} from 'react-router';
-
-const hasLeadingSlash = str => str.charAt(0) === '/';
-const hasTrailingSlash = str => str.charAt(str.length - 1) === '/';
-const preSlash = str => hasLeadingSlash(str)
-  ? str
-  : '/' + str;
-const postSlash = str => hasTrailingSlash(str)
-  ? str
-  : str + '/';
 const deSlash = str => str.replace(/\//g, '');
 
 function getPath(child, parentPath = '') {
