@@ -8,8 +8,11 @@
     "test:dev": "env NODE_ENV=development nodemon test/runner.js src/**/__tests__/*-test.js | tap-spec",
     "build": "babel --presets react,es2015,stage-0,stage-1,stage-2,stage-3 src/index.js --out-file build/index.js"
   },
-  "author": "Iestyn Williams <iest@me.com>",
-  "license": "ISC",
+  "author": "Iestyn Williams <hello_iest@me.com>",
+  "files": [
+    "build"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.7.5",
