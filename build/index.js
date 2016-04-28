@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = pathList;
+exports.pathList = pathList;
 var deSlash = function deSlash(str) {
   return str.replace(/\//g, '');
 };
