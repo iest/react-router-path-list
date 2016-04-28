@@ -30,7 +30,7 @@ function getPath(child, parentPath = '') {
   return paths;
 }
 
-export default function pathList(routes) {
+export function pathList(routes) {
   if (
     !routes ||
     !routes.type ||
